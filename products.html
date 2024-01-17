@@ -104,6 +104,7 @@
                   </div>
                   <h3 class="mb-3">多圖新增</h3>
                   <div v-if="Array.isArray(tempProduct.imagesUrl)">
+                    <!-- 判斷tempProduct.imagesUrl是否為陣列，並利用陣列元素進行畫面渲染 -->
                     <div
                       class="mb-1"
                       v-for="(image, key) in tempProduct.imagesUrl"
@@ -135,7 +136,7 @@
                       </button>
                     </div>
                     <div v-else>
-                      <!-- imagesUrl陣列的最後一個元素為空(即在新增圖片後，又將圖片網址清除)，則該圖片欄位可以被刪除 -->
+                      <!-- imagesUrl陣列的最後一個元素為空(圖片網址被清除)，則該圖片欄位可以被刪除 -->
                       <button
                         class="btn btn-outline-danger btn-sm d-block w-100"
                         @click="tempProduct.imagesUrl.pop()"
@@ -145,7 +146,8 @@
                     </div>
                   </div>
                   <div v-else>
-                    <!-- 點擊建立新產品後會將空物件帶入tempProduct，利用createImages方法在tempProduct.imagesUrl新增空陣列，以便執行上方v-if="Array.isArray(tempProduct.imagesUrl)下的程式碼 -->
+                    <!-- 點擊建立新產品後會將空物件帶入tempProduct，利用createImages方法在tempProduct.imagesUrl新增陣列及一個空陣列元素，
+                      以便執行上方v-if="Array.isArray(tempProduct.imagesUrl)下的程式碼，渲染出空白網址列 -->
                     <button
                       class="btn btn-outline-primary btn-sm d-block w-100"
                       @click="createImages"

@@ -120,7 +120,7 @@ createApp({
         });
     },
     createImages() {
-      this.tempProduct.imagesUrl = [];
+      this.tempProduct.imagesUrl = [""];
     },
   },
 }).mount("#app");
