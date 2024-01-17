@@ -127,7 +127,7 @@
                     <div
                       v-if="!tempProduct.imagesUrl.length || tempProduct.imagesUrl[tempProduct.imagesUrl.length - 1]"
                     >
-                      <!-- 若imagesUrl陣列長度為0(及沒有任何圖片)，或是，imagesUrl陣列的最後一個元素有值(已有加入圖片網址)，則可以再新增圖片 -->
+                      <!-- 若imagesUrl陣列長度為0(即沒有任何圖片)，或是，imagesUrl陣列的最後一個元素有值(已有加入圖片網址)，則可以再新增圖片 -->
                       <button
                         class="btn btn-outline-primary btn-sm d-block w-100"
                         @click="tempProduct.imagesUrl.push('')"
